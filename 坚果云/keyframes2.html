@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      background: linear-gradient(to right, #7A373D, #AE4524);
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      padding-top: 100%;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, .1);
+      left: -30%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .nav-container {
+      position: absolute;
+      width: 100%;
+      /* 用padding撑开高度，使其与宽度1:1 */
+      padding-top: 100%;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, .1);
+      left: -10%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .nav-circle-container {
+      /* 旋转动画相关变量 */
+      --duration: .5s;
+      --delay: 0s;
+      --dis: 5deg;
+      --origin-rotate: var(--origin);
+      --end-rotate: calc(var(--origin) - var(--dis));
+
+      width: 100%;
+      padding-top: 100%;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: rotate var(--duration) var(--delay) both;
+    }
+
+    .nav-circle {
+      width: 70px;
+      height: 70px;
+      background-color: rgba(255, 255, 255, .2);
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(50%, -50%);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-circle-content {
+      /* 旋转动画相关变量：与父元素选择方向相反以保持端正！ */
+      --origin-rotate: calc(0deg - var(--origin));
+      --end-rotate: calc(0deg - var(--origin) + var(--dis));
+
+      width: 80%;
+      height: 80%;
+      background-color: rgba(0, 0, 0, .2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      animation: rotate var(--duration) var(--delay) both;
+    }
+
+    @keyframes rotate {
+      0% {
+        opacity: 0;
+        transform: rotate(var(--origin-rotate));
+      }
+
+      100% {
+        opacity: 1;
+        transform: rotate(var(--end-rotate));
+      }
+    }
+
+    .title {
+      --animation-direction: .5s;
+      position: absolute;
+      top: 50%;
+      left: 100px;
+      transform: translateY(-50px);
+      display: flex;
+      align-items: center;
+      z-index: 1;
+      font-size: 36px;
+    }
+
+    .title .tip {
+      width: 70px;
+      height: 70px;
+      background-color: #6E90F6;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 70px;
+      margin-right: 30px;
+      font-size: 25px;
+      box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.1);
+      animation: tip var(--animation-direction);
+    }
+
+    @keyframes tip {
+      0% {
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.1);
+      }
+
+      100% {
+        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.1);
+
+      }
+    }
+
+    .title h1 {
+      animation: title var(--animation-direction);
+    }
+
+    @keyframes title {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">
+      <div class="tip">01</div>
+      <h1>欢迎使用坚果云大纲笔记</h1>
+    </div>
+    <div class="nav-container">
+      <div class="nav-circle-container" style="--origin:-10deg;">
+        <div class="nav-circle">
+          <div class="nav-circle-content">
+            <span>1.</span>
+          </div>
+        </div>
+      </div>
+      <div class="nav-circle-container" style="--origin:0deg;--delay:0.25s">
+        <div class="nav-circle">
+          <div class="nav-circle-content">
+            <span>2.</span>
+          </div>
+        </div>
+      </div>
+      <div class="nav-circle-container" style="--origin:10deg;--delay:0.5s">
+        <div class="nav-circle">
+          <div class="nav-circle-content">
+            <span>3.</span>
+          </div>
+        </div>
+      </div>
+      <div class="nav-circle-container" style="--origin:20deg;--delay:0.75s">
+        <div class="nav-circle">
+          <div class="nav-circle-content">
+            <span>4.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

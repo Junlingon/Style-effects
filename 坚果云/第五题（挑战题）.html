@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>附加题</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 100px;
+            max-height: 500px;
+            background: linear-gradient(to bottom, #db6a47 0%, #9c3a3b 51%, #3c2226 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .big-circle,
+        .small-circle {
+            border-radius: 50%;
+            width: 1200px;
+            height: 1200px;
+            box-sizing: border-box;
+            top: -365px;
+            left: -150px;
+            position: absolute;
+            background-color: rgb(25, 113, 189, 0.05);
+        }
+
+        .small-circle {
+            left: -400px;
+        }
+
+        .info {
+            display: flex;
+            min-height: 400px;
+            align-items: center;
+            height: 100%;
+            color: #fff;
+            padding-left: 100px;
+        }
+
+        .num {
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: #688efe;
+            font-size: 20px;
+            border-radius: 50%;
+            position: relative;
+            margin-right: 40px;
+        }
+
+        .num::after,
+        .item::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: #688efe;
+            opacity: 0.08;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+        /* .text {
+            animation: fadeIn 1.1s linear infinite;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        } */
+
+        .item {
+            position: absolute;
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: rgb(5, 5, 5, 0.1);
+            border-radius: 50%;
+            color: #fff;
+
+        }
+
+        .item::after {
+            width: 65px;
+            height: 65px;
+        }
+
+        .item_1 {
+            right: -4px;
+            top: 34%;
+            animation: orbit1 1s ease;
+        }
+
+        .item_2 {
+            right: -14px;
+            top: 42%;
+            animation: orbit2 1s ease;
+            animation-delay: 0.1s;
+        }
+
+        .item_3 {
+            right: -20px;
+            top: 50%;
+            animation: orbit3 1s ease;
+            animation-delay: 0.15s;
+        }
+
+        .item_4 {
+            right: -16px;
+            top: 58%;
+            animation: orbit4 1s ease;
+            animation-delay: 0.2s;
+        }
+
+        /* @keyframes orbit {
+            0% {
+                transform: translate(-10px, 100px);
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 2;
+                transform: rotate(-30deg) translateY(0px) rotate(30deg);
+            }
+        } */
+
+        @keyframes orbit1 {
+            0% {
+                right: -14px;
+                top: 42%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit2 {
+            0% {
+                right: -20px;
+                top: 50%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit3 {
+            0% {
+                right: -16px;
+                top: 58%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit4 {
+            0% {
+                right: -10px;
+                top: 66%;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="section">
+        <div class="info">
+            <div class="num">01</div>
+            <h1 class="text animate__animated animate__fadeIn">欢迎使用坚果云大纲笔记</h1>
+        </div>
+        <div class="big-circle">
+            <div class="item item_1 ">1.</div>
+            <div class="item item_2">2.</div>
+            <div class="item item_3">3.</div>
+            <div class="item item_4">4.</div>
+        </div>
+        <div class="small-circle"></div>
+    </div>
+
+</body>
+
+</html>

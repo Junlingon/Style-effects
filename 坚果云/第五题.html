@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五题</title>
+    <style>
+        .container {
+            width: 800px;
+            height: 100vh;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .big-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-sizing: border-box;
+            background-color: #999;
+        }
+
+        .small-circle {
+            background-color: #999;
+            mix-blend-mode: color-dodge;
+            box-sizing: border-box;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+            animation: orbit 5s linear infinite;
+            /* transform: translate(60px, 60px) */
+        }
+
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes orbit {
+            0% {
+                transform: translate(60px, 60px) rotate(0deg) translateX(100px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(60px, 60px) rotate(360deg) translateX(100px) rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="big-circle">
+            <div class="small-circle">
+                <div class="text">动画</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
